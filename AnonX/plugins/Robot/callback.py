@@ -41,7 +41,7 @@ async def markup_panel(client, CallbackQuery: CallbackQuery, _):
         return
     if chat_id not in wrong:
         wrong[chat_id] = {}
-    wrong[chat_id][CallbackQuery.message.message_id] = False
+    wrong[chat_id][CallbackQuery.message.id] = False
 
 
 @app.on_callback_query(filters.regex("MainMarkup") & ~BANNED_USERS)
@@ -64,7 +64,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         return
     if chat_id not in wrong:
         wrong[chat_id] = {}
-    wrong[chat_id][CallbackQuery.message.message_id] = True
+    wrong[chat_id][CallbackQuery.message.id] = True
 
 
 downvote = {}
@@ -385,4 +385,4 @@ async def del_back_playlist(client, CallbackQuery, _):
         string = _["admin_33"].format(seconds_to_min(to_seek))
         await mystic.edit_text(
             f"{string}\n\nᴄʜᴀɴɢᴇs ᴅᴏɴᴇ ʙʏ : {mention} !"
-        )
+)
