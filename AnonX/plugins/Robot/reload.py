@@ -102,7 +102,7 @@ async def close_menu(_, CallbackQuery):
 )
 @ActualAdminCB
 async def stop_download(client, CallbackQuery: CallbackQuery, _):
-    message_id = CallbackQuery.message.message_id
+    message_id = CallbackQuery.message.id
     task = lyrical.get(message_id)
     if not task:
         return await CallbackQuery.answer(
@@ -132,4 +132,4 @@ async def stop_download(client, CallbackQuery: CallbackQuery, _):
             )
     await CallbackQuery.answer(
         "ғᴀɪʟᴇᴅ ᴛᴏ ʀᴇᴄᴏɢɴɪᴢᴇ ᴛʜᴇ ᴏɴɢᴏɪɴɢ ᴛᴀsᴋ.", show_alert=True
-    )
+)
